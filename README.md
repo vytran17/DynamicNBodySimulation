@@ -1,50 +1,18 @@
-# PS5: DNA Alignment
+# PS4: N-Body Simulation
 
-## Contact
-Name: Vy Tran
-Section: 201
-Time to Complete: 5 hours
-vtran1@student.uml.edu
+## Description
+The NBody simulation is a command-line application designed to simulate the motion of celestial bodies within a universe based on Newton's laws of motion and universal gravitation. This simulation employs a numerical integration method known as the "leapfrog" scheme to advance the positions and velocities of celestial bodies over time. The program reads the initial state of a universe from standard input, runs the simulation for a specified duration with a given time step, and outputs the final state of the universe.
 
-## Statement of functionality of your program
-Fully works with extra credit (Hirschberg).
+### Features
+- Scalable Universe: The simulation can handle a configurable number of celestial bodies, allowing for both small and large-scale simulations.
+- Graphical Visualization: Utilizes SFML (Simple and Fast Multimedia Library) for rendering the simulation, providing a real-time visual representation of celestial movements.
+- File Input: The initial state of the universe (positions, velocities, masses, and images of celestial bodies) can be loaded from a file, allowing for customizable simulations.
+- Command-Line Interface: The application accepts two critical command-line arguments: the total simulation time (T) and the time step (∆t). This design allows for flexible simulation runs tailored to specific needs or inquiries.
+- Leapfrog Integration Scheme: The leapfrog method is used for updating the positions and velocities of celestial bodies. This method is symplectic, making it particularly suitable for long-term simulations of gravitational systems due to its excellent energy conservation properties.
+- Gravitational Forces Calculation: The program calculates the gravitational forces between all pairs of bodies using Newton's law of universal gravitation. This includes breaking down the forces into their x and y components based on the bodies' positions.
 
-## Experimental results
+### Memory
+Program is using auto storage duration for local variables and dynamic memory allocations for the vector of celestial bodies. SFML resources like textures and sounds are managed through their respective classes, which handle resource allocation and deallocation internally. There was no inherent need for smart pointers in simulation code. Smart pointer is used in main.cpp for demonstration purposes.
 
-### CPU speed in MHz
-Base frequency of 2.0 GHz and a maximum turbo frequency of 3.2 GHz
-
-### Memory and time
-- ecoli10000.txt
-Execution time is 5.26501 seconds
-Memory 472.7 MB
-
-- ecoli20000.txt
-Execution time is 20.9834 seconds
-Memory 1.53 GB
-
-- ecoli28284.txt
-Execution time is 42.3181 seconds
-Memory 3.03 GB
-
-- ecoli50000.txt
-Execution time is 137.361 seconds
-Memory 9.93 GB
-
-### Implementation
-Hirschberg
-
-### Array method
-vector<vector<int>> matrix
-
-### Operating system
-macOS Ventura 13.1 (22C65)
-
-### CPU type
-Apple M1
-
-## Key features or algorithms used
-This program utilizes Hirschberg's algorithm for computing the edit distance between two strings with linear space complexity, employing dynamic programming for optimal substructure calculation and traceback for alignment reconstruction.
-
-## Extra credit
-Used Hirschberg algorithm and ran on a larger input (ecoli50000.txt)
+### Extra Credit
+Elapsed time is displayed in window title. It shows it in appropriate units (seconds, days, or years). See screenshot.
